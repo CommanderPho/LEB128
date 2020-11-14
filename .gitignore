@@ -19,3 +19,5 @@ timeline.xctimeline
 /Framework
 Carthage/
 
+**/.DS_Store
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
