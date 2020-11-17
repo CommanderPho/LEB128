@@ -10,6 +10,8 @@ develop:
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/LEB128.svg)](https://img.shields.io/cocoapods/v/LEB128.svg)
+[![Platform](https://img.shields.io/cocoapods/p/LEB128.svg?style=flat)](http://cocoadocs.org/docsets/LEB128)
 
 # Install
 
@@ -34,7 +36,7 @@ let package = Package(
 ## Cocoapods
 
 ```
-pod Leb128
+pod 'Leb128'
 ```
 
 # Usage
@@ -65,4 +67,4 @@ pod Leb128
 
 # License
 
-MIT licensed.
+LEB128 is released under the MIT license. See LICENSE for details.
