@@ -11,6 +11,10 @@ import Foundation
 /// Make Stream compatible
 extension InputStream: ByteIn {
 
+	public func canRead() -> Bool {
+		return self.hasBytesAvailable
+	}
+
     public func read() -> UInt8 {
         var value: UInt8 = 0
         self.read(&value, maxLength: 1)

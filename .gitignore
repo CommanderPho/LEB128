@@ -21,3 +21,4 @@ Carthage/
 
 **/.DS_Store
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.swiftpm/xcode/xcshareddata/xcschemes/LEB128.xcscheme
