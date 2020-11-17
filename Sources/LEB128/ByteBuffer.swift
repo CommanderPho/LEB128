@@ -78,6 +78,10 @@ open class ByteBuffer: ByteOut, ByteIn, Equatable {
 
     }
 
+	open func canRead() -> Bool {
+		return ((index >= 0) && (index < size))
+	}
+
     /**
       Read the current value
 

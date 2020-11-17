@@ -16,6 +16,7 @@ public protocol ByteOut {
 /// Protocol for input buffer
 public protocol ByteIn {
     func read() -> UInt8
+	func canRead() -> Bool
 }
 
 // MARK: - Unsigned Integer
@@ -54,10 +55,9 @@ public func decodeUnsignedLEB(_ input: ByteIn) -> UInt {
     var result: UInt = 0
     var shift: UInt = 0
 
-    while true {
+    while input.canRead() {
         let byte = input.read()
         result |= ((UInt(byte) & 0x7F) << shift)
-
         if (byte >> 7) == 0 {
             break
         }
@@ -111,7 +111,7 @@ public func decodeSignedLEB(_ input: ByteIn) -> Int {
     let size: Int = MemoryLayout<Int>.size * 8
     var byte: Byte = 0
 
-    while true {
+    while input.canRead() {
         byte = input.read()
         result |= ((Int(byte) & 0x7F) << shift)
         shift += 7
@@ -119,7 +119,6 @@ public func decodeSignedLEB(_ input: ByteIn) -> Int {
         if ((byte & 0x80) >> 7) == 0 {
             break
         }
-
     }
 
     if (shift < size) && ((Int(byte) & 0x40) >> 6) == 1 {
